@@ -241,10 +241,6 @@ void CInput::CAM_Think( void )
 	{
 		return CAM_CameraThirdThink();
 	}
-	else
-	{
-		CAM_ToThirdPerson();
-	}
 
 	Vector idealAngles;
 	Vector camOffset;
@@ -652,7 +648,7 @@ void CInput::CAM_CameraThirdThink( void )
 	}
 
 	ClampRange180( vecCamOffset[PITCH] );
-	//ClampRange180( vecCamOffset[YAW] );
+	ClampRange180( vecCamOffset[YAW] );
 
 	g_ThirdPersonManager.SetCameraOffsetAngles( vecCamOffset );
 }
