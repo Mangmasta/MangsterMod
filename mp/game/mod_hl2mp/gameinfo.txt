@@ -1,6 +1,6 @@
 "GameInfo"
 {
-	game	"Source Engine Co-Operative Base Modification (2013)"
+	game	"MangMod"
 	title	""
 	title2	""
 	type multiplayer_only
