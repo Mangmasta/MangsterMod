@@ -1,0 +1,2 @@
+xcopy /y .\game\client\Release_mod_hl2mp\client.dll "F:\Program Files (x86)\Steam\steamapps\sourcemods\MangsterMod\bin"
+xcopy /y .\game\server\Release_mod_hl2mp\server.dll "F:\Program Files (x86)\Steam\steamapps\sourcemods\MangsterMod\bin"

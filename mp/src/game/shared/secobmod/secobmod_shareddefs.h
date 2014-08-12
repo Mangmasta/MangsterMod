@@ -30,25 +30,25 @@
 /**************************/
 /* Multiplayer Additions. */
 /**************************/
-#define SecobMod__FRIENDLY_FIRE_ENABLED //Enable friendly fire.
+//#define SecobMod__FRIENDLY_FIRE_ENABLED //Enable friendly fire.
 #define SecobMod__ENABLE_DYNAMIC_PLAYER_RESPAWN_CODE //Respawn where you were killed or for preference near a living player as opposed to back at the start of a map.
-#define SecobMod__USE_PLAYERCLASSES //Enable player classes.
+//#define SecobMod__USE_PLAYERCLASSES //Enable player classes.
 #define SecobMod__MULTIPLAYER_VIEWCONTROL_CAMERAS //Fixes the View Control Cameras so that all clients are affected by View Control cameras.
 //#define SecobMod__FORCE_TEAMPLAY_AS_ALWAYS_ON //Forces teamplay to always be enabled.
-#define SecobMod__ENABLE_FAKE_PASSENGER_SEATS //Allows a hacky passenger seat to be added to valves vehicles (jeep and jalopy).
+//#define SecobMod__ENABLE_FAKE_PASSENGER_SEATS //Allows a hacky passenger seat to be added to valves vehicles (jeep and jalopy).
 
 /**********************/
 /* Game Enhancements. */
 /**********************/
 #define SecobMod__STRIDERS_ALWAYS_STOMP_IMPALE_PLAYERS //Force striders to always impale players with their legs.
-#define SecobMod__BARNACLES_CAN_SWALLOW_PLAYERS //Allow players to be swallowed by barnacles *schlurrrp*.
-#define SecobMod__FIRST_PERSON_RAGDOLL_CAMERA_ON_PLAYER_DEATH //No thirdperson ragdoll view on being killed.
-#define SecobMod__PLAYER_MOVEMENT_CAMERA_BOB //Add camera bob to a moving player.
+//#define SecobMod__BARNACLES_CAN_SWALLOW_PLAYERS //Allow players to be swallowed by barnacles *schlurrrp*.
+//#define SecobMod__FIRST_PERSON_RAGDOLL_CAMERA_ON_PLAYER_DEATH //No thirdperson ragdoll view on being killed.
+//#define SecobMod__PLAYER_MOVEMENT_CAMERA_BOB //Add camera bob to a moving player.
 
 /************************/
 /* Player Enhancements. */
 /************************/
-#define SecobMod__IRONSIGHT_ENABLED //Allow basic version of ironsight. Use the keypad minus key to toggle the ironsight_toggle console command.
+//#define SecobMod__IRONSIGHT_ENABLED //Allow basic version of ironsight. Use the keypad minus key to toggle the ironsight_toggle console command.
 #define SecobMod__ENABLE_NIGHTVISION_FOR_HEAVY_CLASS //Give the heavy class nightvision (use the 'N' key to toggle on/off)
 #define SecobMod__PLAYERS_CAN_PICKUP_OBJECTS //Players can pickup objects with their hands.
 #define SecobMod__CAN_SPRINT_WITHOUT_SUIT //Players can sprint without the HEV suit.
@@ -71,7 +71,7 @@
 /**********************/
 /* Map Enhancements. */
 /*********************/
-#define SecobMod__ENABLE_MAP_BRIEFINGS //Have map briefing VGUI windows (identical to MOTD so you can have either briefings or an motd but not both!) describing the loaded map.
+//#define SecobMod__ENABLE_MAP_BRIEFINGS //Have map briefing VGUI windows (identical to MOTD so you can have either briefings or an motd but not both!) describing the loaded map.
 #define SecobMod__ENABLE_MAP_SPECIFIC_PLAYER_MODEL_OVERRIDES //This allows mappers to override the default player models with one single player model.
 //#define SecobMod__USE_CSS_LADDERS //Use the easier to map with counter strike source ladders in your maps.
 
@@ -79,7 +79,7 @@
 /* Server Enhancements. */
 /************************/
 #define SecobMod__Force_LAN_DISABLED //Disable Lan games from activating on server startup.
-#define SecobMod__ALLOW_VALVE_APPROVED_CHEATING //Allow sv_cheats to work.
+//#define SecobMod__ALLOW_VALVE_APPROVED_CHEATING //Allow sv_cheats to work.
 #define SecobMod__MULTIPLAYER_CHAT_BUBBLES //Shows a chat icon while a player is typing.
 #define SecobMod__HIGH_PING_VEHICLE_FIX //Remove vehicle judder for players with high latency (lag) at the cost of forward/backwards view dampening.
 //#define SecobMod__ALLOW_JEEP_HEADLIGHTS //Allows headlights to work in jeep/jalopy.

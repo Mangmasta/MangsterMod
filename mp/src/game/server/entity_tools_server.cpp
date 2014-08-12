@@ -255,9 +255,10 @@ void CServerTools::MoveEngineViewTo( const Vector &vPos, const QAngle &vAngles )
 	CBasePlayer *pPlayer = UTIL_GetListenServerHost();
 	if ( !pPlayer )
 		return;
-
+	#ifdef SecobMod__ALLOW_VALVE_APPROVED_CHEATING
 	extern void EnableNoClip( CBasePlayer *pPlayer );
 	EnableNoClip( pPlayer );
+	#endif
 
 	Vector zOffset = pPlayer->EyePosition() - pPlayer->GetAbsOrigin();
 

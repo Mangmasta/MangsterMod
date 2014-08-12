@@ -154,6 +154,7 @@ CHL2MP_Player::CHL2MP_Player() : m_PlayerAnimState( this )
 	m_bReady = false;
 
 	BaseClass::ChangeTeam( 0 );
+	//UseClientsideAnimation();
 
 #ifdef SecobMod__USE_PLAYERCLASSES
 	m_bDelayedMessage = false;
@@ -256,14 +257,14 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	CBasePlayer::GiveAmmo( 6,	"Buckshot");
 	CBasePlayer::GiveAmmo( 6,	"357" );
 
-	if ( GetPlayerModelType() == PLAYER_SOUNDS_METROPOLICE || GetPlayerModelType() == PLAYER_SOUNDS_COMBINESOLDIER )
-	{
-		GiveNamedItem( "weapon_stunstick" );
-	}
-	else if ( GetPlayerModelType() == PLAYER_SOUNDS_CITIZEN )
-	{
+	//if ( GetPlayerModelType() == PLAYER_SOUNDS_METROPOLICE || GetPlayerModelType() == PLAYER_SOUNDS_COMBINESOLDIER )
+	//{
+	//	GiveNamedItem( "weapon_stunstick" );
+	//}
+	//else if ( GetPlayerModelType() == PLAYER_SOUNDS_CITIZEN )
+	//{
 		GiveNamedItem( "weapon_crowbar" );
-	}
+	//}
 	
 	//SecobMod__Information: Provide hands.
 	GiveNamedItem( "weapon_hands" );
