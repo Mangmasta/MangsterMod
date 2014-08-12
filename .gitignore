@@ -65,3 +65,8 @@ config.cfg
 # shader files
 *.tmp
 
+*.ffs_batch
+mp/src/lib/public/mathlib.lib
+mp/src/lib/public/raytrace.lib
+mp/src/lib/public/tier1.lib
+mp/src/lib/public/vgui_controls.lib
