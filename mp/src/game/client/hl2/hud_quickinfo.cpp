@@ -181,7 +181,7 @@ bool CHUDQuickInfo::ShouldDraw( void )
 	if ( player == NULL )
 		return false;
 
-	if ( !crosshair.GetBool() && !IsX360() )
+	//if ( !crosshair.GetBool() && !IsX360() )
 		return false;
 
 	return ( CHudElement::ShouldDraw() && !engine->IsDrawingLoadingImage() );

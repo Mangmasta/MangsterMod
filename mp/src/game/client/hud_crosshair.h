@@ -48,7 +48,7 @@ protected:
 	Color			m_clrCrosshair;
 	QAngle			m_vecCrossHairOffsetAngle;
 
-	CPanelAnimationVar( bool, m_bHideCrosshair, "never_draw", "false" );
+	CPanelAnimationVar( bool, m_bHideCrosshair, "never_draw", "true" );
 };
 
 
