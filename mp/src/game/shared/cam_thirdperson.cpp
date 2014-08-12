@@ -57,7 +57,7 @@ CThirdPersonManager::CThirdPersonManager( void )
 
 void CThirdPersonManager::Init( void )
 {
-	m_bOverrideThirdPerson = false;
+	m_bOverrideThirdPerson = true;
 	m_bForced = false;
 	m_flUpFraction = 0.0f;
 	m_flFraction = 1.0f;
