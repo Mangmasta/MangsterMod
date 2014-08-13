@@ -640,6 +640,7 @@ ConVarRef suitcharger( "sk_suitcharger" );
 	//=========================================================
 	float CMultiplayRules::FlPlayerFallDamage( CBasePlayer *pPlayer )
 	{
+		/*
 		int iFallDamage = (int)falldamage.GetFloat();
 
 		switch ( iFallDamage )
@@ -653,6 +654,8 @@ ConVarRef suitcharger( "sk_suitcharger" );
 			return 10;
 			break;
 		}
+		*/
+		return 0;
 	} 
 
 	//=========================================================
