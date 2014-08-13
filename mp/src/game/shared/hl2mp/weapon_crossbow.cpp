@@ -29,7 +29,7 @@
 //#define BOLT_MODEL			"models/crossbow_bolt.mdl"
 #define BOLT_MODEL	"models/weapons/w_missile_closed.mdl"
 
-#define BOLT_AIR_VELOCITY	2000
+#define BOLT_AIR_VELOCITY	1000
 #define BOLT_WATER_VELOCITY	1500
 #define	BOLT_SKIN_NORMAL	0
 #define BOLT_SKIN_GLOW		1
@@ -163,7 +163,7 @@ void CCrossbowBolt::Spawn( void )
 {
 	Precache( );
 
-	SetModel( "models/crossbow_bolt.mdl" );
+	SetModel( "models/plasma_bolt.mdl" );
 	SetMoveType( MOVETYPE_FLYGRAVITY, MOVECOLLIDE_FLY_CUSTOM );
 	UTIL_SetSize( this, -Vector(1,1,1), Vector(1,1,1) );
 	SetSolid( SOLID_BBOX );
@@ -189,7 +189,7 @@ void CCrossbowBolt::Precache( void )
 	PrecacheModel( BOLT_MODEL );
 
 	// This is used by C_TEStickyBolt, despte being different from above!!!
-	PrecacheModel( "models/crossbow_bolt.mdl" );
+	PrecacheModel( "models/plasma_bolt.mdl" );
 
 	PrecacheModel( "sprites/light_glow02_noz.vmt" );
 }
