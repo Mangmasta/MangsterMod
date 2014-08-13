@@ -30,7 +30,7 @@
 #define BOLT_MODEL	"models/weapons/w_missile_closed.mdl"
 
 #define BOLT_AIR_VELOCITY	1000
-#define BOLT_WATER_VELOCITY	1500
+#define BOLT_WATER_VELOCITY	1000
 #define	BOLT_SKIN_NORMAL	0
 #define BOLT_SKIN_GLOW		1
 
@@ -250,7 +250,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 		{
 //			NDebugOverlay::Box( tr2.endpos, Vector( -16, -16, -16 ), Vector( 16, 16, 16 ), 0, 255, 0, 0, 10 );
 //			NDebugOverlay::Box( GetAbsOrigin(), Vector( -16, -16, -16 ), Vector( 16, 16, 16 ), 0, 0, 255, 0, 10 );
-
+			/* Disable sticking NPC's to wall
 			if ( tr2.m_pEnt == NULL || ( tr2.m_pEnt && tr2.m_pEnt->GetMoveType() == MOVETYPE_NONE ) )
 			{
 				CEffectData	data;
@@ -261,6 +261,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 			
 				DispatchEffect( "BoltImpact", data );
 			}
+			*/
 		}
 		
 		SetTouch( NULL );
@@ -274,6 +275,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 		tr = BaseClass::GetTouchTrace();
 
 		// See if we struck the world
+		/*
 		if ( pOther->GetMoveType() == MOVETYPE_NONE && !( tr.surface.flags & SURF_SKY ) )
 		{
 			EmitSound( "Weapon_Crossbow.BoltHitWorld" );
@@ -284,7 +286,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 
 			// See if we should reflect off this surface
 			//float hitDot = DotProduct( tr.plane.normal, -vecDir );
-			/*
+			//HERE IS WHERE RICOCHET HAPPENS
 			if ( ( hitDot < 0.5f ) && ( speed > 100 ) )
 			{
 				Vector vReflection = 2.0f * tr.plane.normal * hitDot + vecDir;
@@ -302,9 +304,10 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 			}
 			else
 			{
-			*/
-				SetThink( &CCrossbowBolt::SUB_Remove );
-				SetNextThink( gpGlobals->curtime + 2.0f );
+			//END RICHOCHET
+				//SetThink( &CCrossbowBolt::SUB_Remove );
+				//SetNextThink( gpGlobals->curtime + 2.0f );
+			SUB_Remove();
 				
 				//FIXME: We actually want to stick (with hierarchy) to what we've hit
 				SetMoveType( MOVETYPE_NONE );
@@ -328,6 +331,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 				SetTouch( NULL );
 				SetThink( &CCrossbowBolt::SUB_Remove );
 				SetNextThink( gpGlobals->curtime + 2.0f );
+				SUB_Remove();
 
 				if ( m_pGlowSprite != NULL )
 				{
@@ -344,14 +348,15 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 		}
 		else
 		{
+			*/
 			// Put a mark unless we've hit the sky
-			if ( ( tr.surface.flags & SURF_SKY ) == false )
+		if ( pOther->GetMoveType() == MOVETYPE_NONE||( tr.surface.flags & SURF_SKY ) == false )
 			{
-				UTIL_ImpactTrace( &tr, DMG_BULLET );
+				UTIL_ImpactTrace( &tr, DMG_PLASMA);
 			}
 
 			UTIL_Remove( this );
-		}
+		//}
 	}
 
 	if ( g_pGameRules->IsMultiplayer() )
