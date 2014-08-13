@@ -29,7 +29,7 @@
 //#define BOLT_MODEL			"models/crossbow_bolt.mdl"
 #define BOLT_MODEL	"models/weapons/w_missile_closed.mdl"
 
-#define BOLT_AIR_VELOCITY	3500
+#define BOLT_AIR_VELOCITY	2000
 #define BOLT_WATER_VELOCITY	1500
 #define	BOLT_SKIN_NORMAL	0
 #define BOLT_SKIN_GLOW		1
@@ -280,11 +280,11 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 
 			// if what we hit is static architecture, can stay around for a while.
 			Vector vecDir = GetAbsVelocity();
-			float speed = VectorNormalize( vecDir );
+			//float speed = VectorNormalize( vecDir );
 
 			// See if we should reflect off this surface
-			float hitDot = DotProduct( tr.plane.normal, -vecDir );
-			
+			//float hitDot = DotProduct( tr.plane.normal, -vecDir );
+			/*
 			if ( ( hitDot < 0.5f ) && ( speed > 100 ) )
 			{
 				Vector vReflection = 2.0f * tr.plane.normal * hitDot + vecDir;
@@ -302,6 +302,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 			}
 			else
 			{
+			*/
 				SetThink( &CCrossbowBolt::SUB_Remove );
 				SetNextThink( gpGlobals->curtime + 2.0f );
 				
@@ -333,7 +334,7 @@ void CCrossbowBolt::BoltTouch( CBaseEntity *pOther )
 					m_pGlowSprite->TurnOn();
 					m_pGlowSprite->FadeAndDie( 3.0f );
 				}
-			}
+			//}
 			
 			// Shoot some sparks
 			if ( UTIL_PointContents( GetAbsOrigin() ) != CONTENTS_WATER)
@@ -638,7 +639,7 @@ void CWeaponCrossbow::FireBolt( void )
 		else
 		{
 			WeaponSound( EMPTY );
-			m_flNextPrimaryAttack = 0.15;
+			m_flNextPrimaryAttack = 0.05;
 		}
 
 		return;
@@ -669,12 +670,12 @@ void CWeaponCrossbow::FireBolt( void )
 
 #endif
 
-	m_iClip1--;
+	//m_iClip1--;
 
-	pOwner->ViewPunch( QAngle( -2, 0, 0 ) );
+	//pOwner->ViewPunch( QAngle( -2, 0, 0 ) );
 
 	WeaponSound( SINGLE );
-	WeaponSound( SPECIAL2 );
+	//WeaponSound( SPECIAL2 );
 
 	SendWeaponAnim( ACT_VM_PRIMARYATTACK );
 
@@ -684,7 +685,7 @@ void CWeaponCrossbow::FireBolt( void )
 		pOwner->SetSuitUpdate("!HEV_AMO0", FALSE, 0);
 	}
 
-	m_flNextPrimaryAttack = m_flNextSecondaryAttack	= gpGlobals->curtime + 0.75;
+	m_flNextPrimaryAttack = m_flNextSecondaryAttack	= gpGlobals->curtime + 0.15;
 
 	DoLoadEffect();
 	SetChargerState( CHARGER_STATE_DISCHARGE );
@@ -728,6 +729,7 @@ bool CWeaponCrossbow::Holster( CBaseCombatWeapon *pSwitchingTo )
 //-----------------------------------------------------------------------------
 void CWeaponCrossbow::ToggleZoom( void )
 {
+	/*
 	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
 	
 	if ( pPlayer == NULL )
@@ -750,6 +752,7 @@ void CWeaponCrossbow::ToggleZoom( void )
 		}
 	}
 #endif
+	*/
 }
 
 #define	BOLT_TIP_ATTACHMENT	2
@@ -864,7 +867,7 @@ CDisablePredictionFiltering disabler;
 	{
 	case CHARGER_STATE_START_LOAD:
 	
-		WeaponSound( SPECIAL1 );
+		//WeaponSound( SPECIAL1 );
 		
 		// Shoot some sparks and draw a beam between the two outer points
 		DoLoadEffect();

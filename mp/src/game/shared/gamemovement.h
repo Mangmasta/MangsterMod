@@ -25,7 +25,7 @@
 #ifdef SecobMod__USE_PLAYERCLASSES
 	#define GAMEMOVEMENT_JUMP_HEIGHT player->GetJumpHeight()
 #else
-	#define GAMEMOVEMENT_JUMP_HEIGHT			21.0f		// units
+	#define GAMEMOVEMENT_JUMP_HEIGHT			50.0f		// units
 #endif //SecobMod__USE_PLAYERCLASSES
 
 #define GAMEMOVEMENT_TIME_TO_UNDUCK			( TIME_TO_UNDUCK * 1000.0f )		// ms
